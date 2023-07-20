@@ -22,24 +22,8 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          node-version: '18.x'
-          cache: 'npm'
-          cache-dependency-path: src/music-hub-rontend/package-lock.json
-      - run: npm ci
-        working-directory: src/music-hub-frontend/
-      - run: npm run build
-        working-directory: src/music-hub-frontend/
-    
-    
-
   # Single deploy job since we're just deploying
   deploy:
-    needs: build
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -49,6 +33,10 @@ jobs:
         uses: actions/checkout@v3
       - name: Setup Pages
         uses: actions/configure-pages@v3
+      - run: npm ci
+        working-directory: src/music-hub-frontend/
+      - run: npm run build
+        working-directory: src/music-hub-frontend/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
