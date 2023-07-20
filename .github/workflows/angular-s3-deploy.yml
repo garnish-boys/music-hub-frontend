@@ -1,0 +1,29 @@
+name: Angular S3 Deploy to S3
+
+on:
+    push:
+        branches: [main]
+
+jobs:
+    
+    s3-deploy:
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v3
+            
+            - name: Use Node.js
+              uses: actions/setup-node@v3
+              with:
+                node-version: '18.x'
+            
+            - name: Install Dependencies
+              run: npm ci
+
+            - name: Deploy to S3
+              env: 
+                NG_DEPLOY_AWS_ACCESS_KEY_ID: ${{ secrets.NG_DEPLOY_AWS_ACCESS_KEY_ID }}
+                NG_DEPLOY_AWS_SECRET_ACCESS_KEY: ${{ secrets.NG_DEPLOY_AWS_SECRET_ACCESS_KEY }}
+                NG_DEPLOY_AWS_BUCKET: ${{ secrets.NG_DEPLOY_AWS_BUCKET }}
+                NG_DEPLOY_AWS_REGION: ${{ secrets.NG_DEPLOY_AWS_REGION }}
+              run: npm run ng deploy
