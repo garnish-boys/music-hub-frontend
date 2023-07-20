@@ -1,5 +1,9 @@
 name: Angular S3 Deploy to S3
 
+defaults:
+    run:
+        working-directory: src/music-hub-frontend
+
 on:
     push:
         branches: [main]
