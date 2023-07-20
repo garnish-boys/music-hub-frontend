@@ -31,7 +31,9 @@ jobs:
           cache: 'npm'
           cache-dependency-path: src/music-hub-rontend/package-lock.json
       - run: npm ci
+        working-directory: src/music-hub-frontend/
       - run: npm run build
+        working-directory: src/music-hub-frontend/
     
     
 
