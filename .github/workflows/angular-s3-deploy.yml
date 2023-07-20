@@ -31,7 +31,7 @@ jobs:
                 args: --acl public-read --follow-symlinks --delete
               env:
                AWS_S3_BUCKET: ${{ secrets.NG_DEPLOY_AWS_BUCKET }}
-               AWS_ACCESS_KEY_ID: ${{ secrets.NG_DEPLOY_AWS_ACCESS_KEY }}
+               AWS_ACCESS_KEY_ID: ${{ secrets.NG_DEPLOY_AWS_ACCESS_KEY_ID }}
                AWS_SECRET_ACCESS_KEY: ${{ secrets.NG_DEPLOY_AWS_SECRET_ACCESS_KEY}}
                AWS_REGION: ${{ secrets.NG_DEPLOY_AWS_REGION }}
                SOURCE_DIR: './src/music-hub-frontend/dist/music-hub-frontend/'
