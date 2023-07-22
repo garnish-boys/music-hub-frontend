@@ -1,0 +1,13 @@
+.filler {
+    flex: 1 1 auto;
+ }
+ .gap {
+    margin-right: 10px;
+ }
+ .tab-start{
+    margin-left: 100px;
+ }
+ .tab-link{
+    text-decoration: none;
+    color: inherit;
+ }
