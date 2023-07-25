@@ -1,15 +1,11 @@
 import { Component, ViewChild, inject } from '@angular/core';
-import { RouterOutlet, RouterModule, Router, Route, ActivatedRoute } from '@angular/router';
+import { RouterOutlet, RouterModule, Router, Route } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import {MatListModule} from '@angular/material/list';
+import { MatListModule } from '@angular/material/list';
 import { SidenavToggleService } from '../sidenav-toggle.service';
-
-
-
-
 
 @Component({
   selector: 'app-side-nav',
@@ -23,12 +19,12 @@ export class SideNavComponent {
 
   private sidenavToggleService = inject(SidenavToggleService);
   private router = inject(Router);
-  
+
   public sidenavOpened: boolean = true;
   public routes: Route[];
 
   constructor() {
-    this.routes = this.router.config.filter(route => !!route.title );
+    this.routes = this.router.config.filter(route => !!route.title);
   }
 
   ngAfterViewInit() {
@@ -36,10 +32,4 @@ export class SideNavComponent {
       this.sidenavToggleService.setSidenav(this.sidenav);
     }
   }
-
-  tryIsActive(val: any): boolean {
-    console.log(val);
-    return true;
-  }
-
 }
