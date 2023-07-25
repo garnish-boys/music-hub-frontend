@@ -20,7 +20,7 @@ export class SideNavComponent {
   private sidenavToggleService = inject(SidenavToggleService);
   private router = inject(Router);
 
-  public sidenavOpened: boolean = true;
+  public sidenavOpened: boolean = false;
   public routes: Route[];
 
   constructor() {
