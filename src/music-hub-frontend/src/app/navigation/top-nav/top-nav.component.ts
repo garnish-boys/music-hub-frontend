@@ -4,7 +4,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatDividerModule } from '@angular/material/divider';
-import { SidenavToggleService } from '../sidenav-toggle.service';
+import { SidenavToggleService } from '../shared/sidenav-toggle.service';
 
 @Component({
   selector: 'app-top-nav',
