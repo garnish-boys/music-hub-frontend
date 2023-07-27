@@ -5,7 +5,7 @@ import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
-import { SidenavToggleService } from '../sidenav-toggle.service';
+import { SidenavToggleService } from '../shared/sidenav-toggle.service';
 
 @Component({
   selector: 'app-side-nav',
