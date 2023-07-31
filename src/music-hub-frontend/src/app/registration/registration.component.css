@@ -1,0 +1,46 @@
+.register-container {
+    margin-top: 50px;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    display: flex;
+}
+
+.register-content {
+    width: 400px;
+    display: block;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.register-toolbar {
+    justify-content: center;
+}
+
+.social-media-flex {
+    display: flex;
+    justify-content: space-around;
+}
+
+mat-form-field {
+    display: inline-flex;
+    align-items: baseline;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+button {
+    height: 60px;
+}
+
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #eee;
+}
+
+form {
+    min-height: 100%;
+    padding: 20px;
+}
