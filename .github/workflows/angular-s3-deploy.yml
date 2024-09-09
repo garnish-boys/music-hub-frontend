@@ -1,8 +1,6 @@
 name: Angular S3 Deploy to S3
 
 on:
-    push:
-        branches: [main]
 
 jobs:
     
