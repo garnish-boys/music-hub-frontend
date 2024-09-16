@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { MvpLayoutComponent } from "./layouts/mvp-layout/mvp-layout.component";
+import { DesktopLayoutComponent } from './layouts/desktop';
+import { HeaderOnlyLayoutComponent } from './layouts/desktop/header-only-layout/header-only-layout.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [MvpLayoutComponent],
+  imports: [DesktopLayoutComponent, HeaderOnlyLayoutComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

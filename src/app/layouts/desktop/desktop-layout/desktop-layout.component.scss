@@ -1,7 +1,4 @@
-@use '@angular/material' as mat;
-@use 'theme';
-
-.desktop-layout-outer {
+.desktop-layout {
     display: flex;
     flex-flow: column nowrap;
     align-items: stretch;
@@ -14,7 +11,5 @@
         display: flex;
         flex-flow: row nowrap;
         align-items: stretch;
-
-        background: mat.get-theme-color(theme.$light-theme, surface-dim);
     }
 }

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MvpLayoutComponent } from './mvp-layout.component';
+import { NavLinkComponent } from './nav-link.component';
 
-describe('MvpLayoutComponent', () => {
-  let component: MvpLayoutComponent;
-  let fixture: ComponentFixture<MvpLayoutComponent>;
+describe('NavLinkComponent', () => {
+  let component: NavLinkComponent;
+  let fixture: ComponentFixture<NavLinkComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MvpLayoutComponent]
+      imports: [NavLinkComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(MvpLayoutComponent);
+    fixture = TestBed.createComponent(NavLinkComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

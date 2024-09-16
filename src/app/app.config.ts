@@ -7,14 +7,18 @@ import { provideState, provideStore } from '@ngrx/store';
 
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { navFeature } from './features/nav/store/nav.reducer';
+import { provideRouterStore, routerReducer } from '@ngrx/router-store';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideAnimationsAsync(),
-    provideStore(),
+    provideStore({
+      router: routerReducer
+    }),
     provideState(navFeature),
-    provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() })
+    provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
+    provideRouterStore()
 ]
 };
