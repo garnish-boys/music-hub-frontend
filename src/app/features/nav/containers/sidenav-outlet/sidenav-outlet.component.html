@@ -1,0 +1,11 @@
+<mat-sidenav-container class="flex-grow-1">
+    <mat-sidenav [opened]="sidenavOpen()" mode="side">
+        <mat-nav-list>
+            <a mat-list-item routerLink="start" routerLinkActive="active-link">Start</a>
+            <a mat-list-item routerLink="about" routerLinkActive="active-link">About</a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet />
+    </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,8 +1,6 @@
-<mat-toolbar >
-    <button mat-icon-button  class="example-icon" aria-label="Example icon-button with menu icon">
+<mat-toolbar class="header-nav-toolbar">
+    <button mat-icon-button (click)="toggleSidenav()" class="example-icon" aria-label="Example icon-button with menu icon">
         <mat-icon>menu</mat-icon>
     </button>
     <span>Music Hub</span>
-    <span class="example-spacer"></span>
-    <a mat-button routerLink="/start">Start</a>
 </mat-toolbar>
