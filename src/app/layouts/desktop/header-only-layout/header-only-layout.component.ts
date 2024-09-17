@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-
+import { HeaderNavComponent } from '@features/nav/containers/header-nav/header-nav.component';
 import { RouterOutlet } from '@angular/router';
-import { HeaderNavComponent } from '../../../features/nav/components/header-nav/header-nav.component';
 
 @Component({
   selector: 'app-header-only-layout',

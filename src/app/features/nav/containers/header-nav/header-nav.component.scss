@@ -2,8 +2,14 @@
 @use '@angular/material' as mat;
 @use 'theme';
 
-.header-nav {
-    background: mat.get-theme-color(theme.$light-theme, primary-container);
+.primary-toolbar {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+.header-title {
+    padding-right: 1rem;
 }
 
 .example-spacer {
