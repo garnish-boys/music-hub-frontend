@@ -5,8 +5,10 @@
         </button>
     }
     <span class="header-title">Music Hub</span>
-    @for (navItem of (navItems$ | async); track navItem.title) {
-        <a mat-button [routerLink]="navItem.routerLink">{{navItem.title}}</a>
+    @if(showHeaderNavLinks) {
+        @for (navItem of (navItems$ | async); track navItem.title) {
+            <app-nav-link [navItem]="navItem" navLinkType="header" />
+        }
     }
     <div class="example-spacer"></div>
     <a mat-button href="#">Register</a>

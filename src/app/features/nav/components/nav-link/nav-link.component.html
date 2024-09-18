@@ -1,6 +1,6 @@
-<a mat-button [routerLink]="navItem?.routerLink" routerLinkActive="active">
+<button mat-button [routerLink]="navItem?.routerLink" routerLinkActive="active">
     @if (navItem?.icon) {
         <mat-icon>{{navItem?.icon}}</mat-icon>
     }
     {{navItem?.title}}
-</a>
+</button>

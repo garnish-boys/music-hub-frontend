@@ -1,2 +1,7 @@
 @use '@angular/material' as mat;
 @use 'theme';
+
+.active {
+    color: mat.get-theme-color(theme.$light-theme, on-primary-fixed-variant);
+    background: mat.get-theme-color(theme.$light-theme, primary-fixed-dim);
+}

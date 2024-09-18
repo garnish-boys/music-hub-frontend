@@ -13,17 +13,18 @@ import { Observable } from 'rxjs';
 import { MatListModule } from '@angular/material/list';
 import { AsyncPipe } from '@angular/common';
 import { RouterLink, RouterModule } from '@angular/router';
+import { NavLinkComponent } from '../../components/nav-link/nav-link.component';
 
 const routeConfig: NavItem[] = [
   {
     title: 'Start',
-    icon: 'start',
+    icon: '',
     isActive: false,
     routerLink: 'start'
   },
   {
     title: 'About',
-    icon: 'about',
+    icon: 'info',
     isActive: false,
     routerLink: 'about'
   },
@@ -41,13 +42,15 @@ const isActiveNavLink = (url: string, navItem: NavItem) =>
     MatButtonModule,
     MatListModule,
     AsyncPipe,
-    RouterModule
+    RouterModule,
+    NavLinkComponent
   ],
   templateUrl: './header-nav.component.html',
   styleUrl: './header-nav.component.scss'
 })
 export class HeaderNavComponent {
   @Input() showSidenavDrawerButton = false;
+  @Input() showHeaderNavLinks = false;
 
   private readonly store = inject(Store);
   
