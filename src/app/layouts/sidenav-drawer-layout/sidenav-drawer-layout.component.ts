@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderNavComponent } from '@app/features/nav/containers/header-nav/header-nav.component';
 import { SidenavOutletComponent } from '@app/features/nav/containers/sidenav-outlet/sidenav-outlet.component';
+import { NavItem } from '@app/features/nav/nav.model';
 
 @Component({
   selector: 'app-sidenav-drawer-layout',
@@ -10,6 +11,13 @@ import { SidenavOutletComponent } from '@app/features/nav/containers/sidenav-out
   templateUrl: './sidenav-drawer-layout.component.html',
   styleUrl: './sidenav-drawer-layout.component.scss'
 })
-export class SidenavDrawerLayoutComponent {
+export class SidenavDrawerLayoutComponent implements OnInit {
+  @Input() headerNavItems: NavItem[] = [];
+  @Input() sidenavItems: NavItem[] = [];
 
+  showHeaderNavLinks = false;
+
+  ngOnInit(): void {
+      this.showHeaderNavLinks = this.headerNavItems.length > 0;
+  }
 }
