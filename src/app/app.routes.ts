@@ -1,9 +1,7 @@
 import { Routes } from '@angular/router';
-import { StartComponent } from './features/start/start.component';
-import { AboutComponent } from './features/about/about.component';
+import { StartPageComponent } from './pages/start-page/start-page.component';
 
 export const routes: Routes = [
-    { path: 'start', component: StartComponent },
-    { path: 'about', component: AboutComponent },
+    { path: 'start', component: StartPageComponent },
     { path: '', redirectTo: '/start', pathMatch: 'full' }
 ];

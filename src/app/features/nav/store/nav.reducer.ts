@@ -1,12 +1,15 @@
 import { createFeature, createReducer, on } from "@ngrx/store";
 import { NavActions } from "./nav.actions";
+import { NavConfig } from "../nav.model";
 
 interface NavState {
     sidenavOpen: boolean;
+    // config: NavConfig;
 }
 
 const initialState: NavState = {
-    sidenavOpen: false
+    sidenavOpen: false,
+    // config: 
 }
 
 export const navFeature = createFeature({

@@ -19,13 +19,11 @@ const routeConfig: NavItem[] = [
   {
     title: 'Start',
     icon: '',
-    isActive: false,
     routerLink: 'start'
   },
   {
     title: 'About',
     icon: 'info',
-    isActive: false,
     routerLink: 'about'
   },
 ]

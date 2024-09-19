@@ -2,9 +2,15 @@
 export interface NavItem {
     title: string;
     icon: string;
-    isActive: boolean;
     routerLink?: string;
     externalLink?: string;
+}
+
+export interface NavConfig {
+    headerNavItems: NavItem[];
+    sidenavItems: NavItem[];
+    showHeaderDrawerToggle: boolean;
+    sidenavFixed: boolean;
 }
 
 // NavLink

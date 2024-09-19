@@ -1,4 +1,5 @@
 import { getRouterSelectors } from "@ngrx/router-store";
+import { createSelector } from "@ngrx/store";
 
 export const {
     selectCurrentRoute, // select the current route
@@ -12,3 +13,5 @@ export const {
     selectUrl, // select the current url
     selectTitle, // select the title if available
 } = getRouterSelectors();
+
+export const selectIsNavItemActive = (url: string) => createSelector(selectUrl, (currentUrl) => currentUrl == url);

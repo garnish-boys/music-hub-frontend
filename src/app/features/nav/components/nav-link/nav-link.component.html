@@ -1,6 +1,25 @@
-<button mat-button [routerLink]="navItem?.routerLink" routerLinkActive="active">
-    @if (navItem?.icon) {
-        <mat-icon>{{navItem?.icon}}</mat-icon>
+@switch (navLinkType) {
+    @case('header') {
+        <button mat-button [routerLink]="navItem?.routerLink" routerLinkActive="active">
+            @if (navItem?.icon) {
+                <mat-icon>{{navItem?.icon}}</mat-icon>
+            }
+            {{navItem?.title}}
+        </button>
     }
-    {{navItem?.title}}
-</button>
+    @case ('side') {
+        @if (navItem?.icon) {
+            <a mat-list-item [routerLink]="navItem?.routerLink" [activated]="isActive()"><mat-icon>{{navItem?.icon}}</mat-icon>{{navItem?.title}}</a>
+        } @else {
+            <a mat-list-item [routerLink]="navItem?.routerLink" [activated]="isActive()">{{navItem?.title}}</a>
+        }
+    }
+    @default {
+        <button mat-button [routerLink]="navItem?.routerLink" routerLinkActive="active">
+            @if (navItem?.icon) {
+                <mat-icon>{{navItem?.icon}}</mat-icon>
+            }
+            {{navItem?.title}}
+        </button>
+    }
+}
