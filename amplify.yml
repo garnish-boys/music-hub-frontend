@@ -8,7 +8,7 @@ frontend:
       commands:
         - npm run build
   artifacts:
-    baseDirectory: dist/music-hub-frontend
+    baseDirectory: dist/music-hub-frontend/browser
     files:
       - '**/*'
   cache:
