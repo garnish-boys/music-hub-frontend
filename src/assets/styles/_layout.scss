@@ -2,6 +2,7 @@
 @use 'theme';
 
 .desktop-layout-outer {
+    // background: mat.get-theme-color(theme.$light-theme, surface-container);
     display: flex;
     flex-flow: column nowrap;
     align-items: stretch;
@@ -9,12 +10,15 @@
     min-height: 100%;
 
     &__content {
+        // background: mat.get-theme-color(theme.$light-theme, surface-container);
         flex-grow: 1;
         
         display: flex;
         flex-flow: row nowrap;
         align-items: stretch;
-
-        background: mat.get-theme-color(theme.$light-theme, surface-dim);
     }
+}
+
+.content-container {
+    padding: 0 16px;
 }

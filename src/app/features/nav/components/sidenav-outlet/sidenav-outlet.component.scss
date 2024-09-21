@@ -1,0 +1,10 @@
+@use '@angular/material' as mat;
+@use 'theme';
+
+.sidenav-container {
+    flex-grow: 1;
+}
+
+.sidenav-content-container {
+    // background: mat.get-theme-color(theme.$light-theme, surface-container);
+}

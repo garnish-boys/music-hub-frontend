@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { HeaderNavComponent } from '@app/features/nav/containers/header-nav/header-nav.component';
-import { SidenavOutletComponent } from '@app/features/nav/containers/sidenav-outlet/sidenav-outlet.component';
+import { HeaderNavComponent } from '@features/nav';
+import { SidenavOutletComponent } from '@features/nav';
 import { NavItem } from '@app/features/nav/nav.model';
 
 @Component({

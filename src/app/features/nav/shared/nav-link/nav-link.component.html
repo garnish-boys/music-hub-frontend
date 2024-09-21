@@ -1,6 +1,6 @@
 @switch (navLinkType) {
     @case('header') {
-        <button mat-button [routerLink]="navItem?.routerLink" routerLinkActive="active">
+        <button mat-button [routerLink]="navItem?.routerLink">
             @if (navItem?.icon) {
                 <mat-icon>{{navItem?.icon}}</mat-icon>
             }

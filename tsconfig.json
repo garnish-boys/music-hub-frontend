@@ -25,7 +25,10 @@
     ],
     "paths": {
       "@app/*": ["./src/app/*"],
-      "@features/*": ["./src/app/features/*"]
+      "@core/*": ["./src/app/core/*"],
+      "@features/*": ["./src/app/features/*"],
+      "@shared/*": ["./src/app/shared/*"],
+      "@pages/*": ["./src/app/pages/*"]
     }
   },
   "angularCompilerOptions": {

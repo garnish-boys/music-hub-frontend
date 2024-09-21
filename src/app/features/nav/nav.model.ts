@@ -1,7 +1,7 @@
 // NavItem
 export interface NavItem {
     title: string;
-    icon: string;
+    icon?: string;
     routerLink?: string;
     externalLink?: string;
 }

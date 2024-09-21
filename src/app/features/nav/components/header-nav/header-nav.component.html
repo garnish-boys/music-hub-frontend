@@ -1,0 +1,14 @@
+<mat-toolbar class="primary-toolbar mat-typography">
+    @if (showSidenavDrawerButton) {
+        <button mat-icon-button (click)="toggleSidenav()" class="example-icon" aria-label="Example icon-button with menu icon">
+            <mat-icon>menu</mat-icon>
+        </button>
+    }
+    <!-- <a mat-button routerLink="/" class="header-title">Music Hub</a> -->
+    <span class="header-title" (click)="navToHub()">Music Hub</span>
+    @for (navItem of navItems; track navItem.title) {
+        <app-nav-link [navItem]="navItem" navLinkType="header" />
+    }
+    <div class="example-spacer"></div>
+    <app-auth-nav-item />
+</mat-toolbar>

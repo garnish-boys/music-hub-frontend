@@ -12,24 +12,9 @@ import { map, tap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { MatListModule } from '@angular/material/list';
 import { AsyncPipe } from '@angular/common';
-import { RouterLink, RouterModule } from '@angular/router';
-import { NavLinkComponent } from '../../components/nav-link/nav-link.component';
-
-const routeConfig: NavItem[] = [
-  {
-    title: 'Start',
-    icon: '',
-    routerLink: 'start'
-  },
-  {
-    title: 'About',
-    icon: 'info',
-    routerLink: 'about'
-  },
-]
-
-const isActiveNavLink = (url: string, navItem: NavItem) => 
-  (!!navItem.routerLink && !!url) ? url.includes(navItem.routerLink) : false;
+import { Router, RouterLink, RouterModule } from '@angular/router';
+import { NavLinkComponent } from '../../shared/nav-link/nav-link.component';
+import { AuthNavItemComponent } from '../auth-nav-item/auth-nav-item.component';
 
 @Component({
   selector: 'app-header-nav',
@@ -41,29 +26,24 @@ const isActiveNavLink = (url: string, navItem: NavItem) =>
     MatListModule,
     AsyncPipe,
     RouterModule,
-    NavLinkComponent
+    NavLinkComponent,
+    AuthNavItemComponent
   ],
   templateUrl: './header-nav.component.html',
   styleUrl: './header-nav.component.scss'
 })
 export class HeaderNavComponent {
   @Input() showSidenavDrawerButton = false;
-  @Input() showHeaderNavLinks = false;
+  @Input() navItems: NavItem[] = [];
 
   private readonly store = inject(Store);
+  private readonly router = inject(Router);
   
-  currentUrl$ = this.store.select(selectUrl);
-  
-  navItems$: Observable<NavItem[]> = this.currentUrl$.pipe(
-    map((url: string) => {
-      return routeConfig.map(route => ({
-        ...route,
-        isActive: isActiveNavLink(url, route)
-      }))
-    })
-  );
-
   toggleSidenav() {
     this.store.dispatch(NavActions.toggleSidenav())
+  }
+
+  navToHub() {
+    this.router.navigateByUrl('/hub');
   }
 }

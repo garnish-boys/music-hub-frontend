@@ -1,0 +1,14 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav [opened]="sidenavOpen()" mode="side">
+        <mat-nav-list>
+            @for (navItem of navItems; track navItem.title) {
+                <app-nav-link [navItem]="navItem" navLinkType="side" />
+            }
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content class="sidenav-content-container">
+        <div class="content-container">
+            <ng-content />
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
