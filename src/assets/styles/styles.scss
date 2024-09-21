@@ -1,0 +1,20 @@
+// @use '../../../node_modules/bootstrap/scss/bootstrap-utilities.scss';
+// @use '../../../node_modules/bootstrap/scss/bootstrap-grid.scss';
+@use '@angular/material' as mat;
+@use 'theme' as theme;
+@use './toolbar-theme' as toolbar;
+
+@use 'layout';
+
+@include mat.core();
+
+html {
+    @include mat.all-component-themes(theme.$light-theme);
+    @include toolbar.theme(theme.$light-theme);
+
+    @include mat.system-level-colors(theme.$light-theme);
+    @include mat.system-level-typography(theme.$light-theme);
+    
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

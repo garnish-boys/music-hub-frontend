@@ -1,0 +1,20 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+@mixin color($theme) {
+    .primary-toolbar {
+        background: mat.get-theme-color($theme, primary-container);
+        color: mat.get-theme-color($theme, on-primary-container);
+    }
+
+    .secondary-toolbar {
+        background: mat.get-theme-color($theme, secondary-container);
+        color: mat.get-theme-color($theme, on-secondary-container);
+    }
+}
+
+@mixin theme($theme) {
+    @if mat.theme-has($theme, color) {
+        @include color($theme)
+    }
+}

@@ -1,0 +1,6 @@
+<div class="desktop-layout-outer">
+    <app-header-nav [navItems]="headerNavItems" [showSidenavDrawerButton]="true" />
+    <app-sidenav-outlet [navItems]="sidenavItems" class="desktop-layout-outer__content" >
+        <ng-content />
+    </app-sidenav-outlet>
+</div>

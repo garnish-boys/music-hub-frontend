@@ -1,0 +1,42 @@
+@use '@angular/material' as mat;
+@use 'theme';
+
+.auth-page-outer {
+    display: flex;
+    justify-content: center;
+
+    &__form-card {
+        // min-height: 350px;
+    }
+    &__form-card-content {
+        flex-grow: 1;
+    }
+}
+
+.auth-form {
+    height: 240px;
+    padding: 2rem 1rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-tabs {
+    height: 100%;
+    width: 320px;
+    
+    &__container {
+
+    }
+}
+
+.app-form-field {
+    @include mat.form-field-density(-4);
+}
+
+.app-form-btn {
+    @include mat.button-density(4);
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}

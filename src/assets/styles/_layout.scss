@@ -1,0 +1,25 @@
+@use '@angular/material' as mat;
+@use 'theme';
+
+.desktop-layout-outer {
+    // background: mat.get-theme-color(theme.$light-theme, surface-container);
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: stretch;
+    
+    min-height: 100%;
+
+    &__content {
+        // background: mat.get-theme-color(theme.$light-theme, surface-container);
+        flex-grow: 1;
+        
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: stretch;
+    }
+}
+
+.content-container {
+    padding: 1rem 2rem;
+    flex-grow: 1;
+}
